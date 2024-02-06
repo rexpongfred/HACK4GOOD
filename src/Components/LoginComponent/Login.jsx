@@ -98,24 +98,24 @@ const Login = () => {
                 </Typography>
                 <Stack spacing={3}>
                     <TextField
-                    // variant="outlined"
-                    // type="text"
-                    // id="username"
-                    // ref={userRef}
-                    // name="username"
-                    // label="Username"
-                    // autoComplete="off"
-                    // {...userAttribs}
-                    // required
+                        variant="outlined"
+                        type="text"
+                        id="username"
+                        // ref={userRef}
+                        name="username"
+                        label="Username"
+                        autoComplete="off"
+                        // {...userAttribs}
+                        required
                     />
                     <TextField
-                    // type="password"
-                    // id="password"
-                    // onChange={(e) => setPwd(e.target.value)}
-                    // value={pwd}
-                    // required
-                    // name="password"
-                    // label="Password"
+                        type="password"
+                        id="password"
+                        // onChange={(e) => setPwd(e.target.value)}
+                        // value={pwd}
+                        required
+                        name="password"
+                        label="Password"
                     />
                     <div className="persistCheck">
                         <Checkbox
