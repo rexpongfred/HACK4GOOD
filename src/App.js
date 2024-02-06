@@ -2,7 +2,8 @@ import Login from "./Components/LoginComponent/Login";
 import LoginPage from "./Layouts/LoginPage";
 
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./Components/dashboard/Dashboard";
+import VolunteerDashboard from "./Components/Volunteer Dashboard/Dashboard";
+import AdminDashboard from "./Components/Admin Dashboard/Dashboard";
 
 function App() {
     return (
@@ -10,7 +11,8 @@ function App() {
             <Route element={<LoginPage />}>
                 <Route path="login" element={<Login />} />
             </Route>
-            <Route path="/" element={<Dashboard />}></Route>
+            <Route path="/volunteer" element={<VolunteerDashboard />}></Route>
+            <Route path="/admin" element={<AdminDashboard />}></Route>
         </Routes>
     );
 }
