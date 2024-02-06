@@ -17,10 +17,10 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { mainListItems, secondaryListItems } from "./listItemsVolunteer";
-import Chart from "./Chart";
-import Deposits from "./Deposits";
-import Orders from "./Orders";
+import { mainListItems, secondaryListItems } from "../Components/Dashboard/listItemsVolunteer";
+import Chart from "../Components/Dashboard/Chart";
+import Deposits from "../Components/Dashboard/Deposits";
+import Orders from "../Components/Dashboard/Orders";
 
 function EnrolledActivities() {
   // Mock data for enrolled activities
@@ -128,7 +128,7 @@ export default function Dashboard() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={8} lg={9}>
+              {/* <Grid item xs={12} md={8} lg={9}>
                 <Paper
                   sx={{
                     p: 2,
@@ -139,8 +139,8 @@ export default function Dashboard() {
                 >
                   <Chart />
                 </Paper>
-              </Grid>
-              <Grid item xs={12} md={4} lg={3}>
+              </Grid> */}
+              {/* <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
                     p: 2,
@@ -151,9 +151,9 @@ export default function Dashboard() {
                 >
                   <Deposits />
                 </Paper>
-              </Grid>
+              </Grid> */}
               <EnrolledActivities /> {/* Render EnrolledActivities component */}
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Paper
                   sx={{
                     p: 2,
@@ -163,7 +163,7 @@ export default function Dashboard() {
                 >
                   <Orders />
                 </Paper>
-              </Grid>
+              </Grid> */}
             </Grid>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 3 }}>
               {" "}
