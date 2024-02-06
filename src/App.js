@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import VolunteerDashboard from "./Components/Dashboard/DashboardVolunteer";
 import AdminDashboard from "./Components/Dashboard/DashboardAdmin";
 import EnrolledActivities from "./Components/Dashboard/Enrolled Activities";
+import Opportunities from "./Pages/Opportunities"
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/volunteer" element={<VolunteerDashboard />}></Route>
             <Route path="/admin" element={<AdminDashboard />}></Route>
             <Route path="/enrolled-activities" element={<EnrolledActivities />}></Route>
+            <Route path="/Opportunities" element={<Opportunities />} />
         </Routes>
     );
 }
