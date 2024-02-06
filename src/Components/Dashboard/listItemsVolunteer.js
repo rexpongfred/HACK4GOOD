@@ -9,64 +9,40 @@ import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import LayersIcon from "@mui/icons-material/Layers";
 import AssignmentIcon from "@mui/icons-material/Assignment";
+import { Link } from "react-router-dom";
 
 export const mainListItems = (
     <React.Fragment>
-        <ListItemButton>
+        <ListItemButton component={Link} to="/volunteer"> {/* Link to "/dashboard" */}
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
             <ListItemText primary="My Summary" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} to="/opportunities"> {/* Link to "/opportunities" */}
             <ListItemIcon>
                 <ShoppingCartIcon />
             </ListItemIcon>
             <ListItemText primary="Opportunities" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} to="/enrolled-activities"> {/* Link to "/enrolled-activities" */}
             <ListItemIcon>
                 <PeopleIcon />
             </ListItemIcon>
             <ListItemText primary="Enrolled Activities" />
         </ListItemButton>
-        {/* <ListItemButton>
-            <ListItemIcon>
-                <BarChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Reports" />
-        </ListItemButton> */}
-        {/* <ListItemButton>
-            <ListItemIcon>
-                <LayersIcon />
-            </ListItemIcon>
-            <ListItemText primary="Integrations" />
-        </ListItemButton> */}
+        {/* Add more links for other pages */}
     </React.Fragment>
 );
 
 export const secondaryListItems = (
     <React.Fragment>
-        {/* <ListSubheader component="div" inset>
-            Saved reports
-        </ListSubheader> */}
-        <ListItemButton>
+        <ListItemButton component={Link} to="/my-certificate"> {/* Link to "/my-certificate" */}
             <ListItemIcon>
                 <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="My Certificate" />
         </ListItemButton>
-        {/* <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Last quarter" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Year-end sale" />
-        </ListItemButton> */}
+        {/* Add more links for other pages */}
     </React.Fragment>
 );
