@@ -94,7 +94,7 @@ const Login = () => {
                     {errMsg}
                 </p> */}
                 <Typography variant="h3" sx={{ px: 5, mb: 5 }}>
-                    Sign in to Cyfer
+                    Sign in to SINEP
                 </Typography>
                 <Stack spacing={3}>
                     <TextField
