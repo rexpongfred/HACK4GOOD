@@ -8,6 +8,7 @@ import EnrolledActivities from "./Pages/Enrolled Activities";
 import Opportunities from "./Pages/Opportunities";
 import DashboardLayout from "./Layouts/DashboardLayout";
 import MyCertificate from "./Pages/MyCertificate";
+import CreateForm from "./Pages/CreateForm";
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                 ></Route>
                 <Route path="/Opportunities" element={<Opportunities />} />
                 <Route path="MyCertificate" element={<MyCertificate />} />
+                <Route path="createForm" element={<CreateForm />} />
             </Route>
         </Routes>
     );
