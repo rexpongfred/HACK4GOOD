@@ -1,10 +1,19 @@
 import React from "react";
 
-import { styled } from "@mui/material/styles";
+import { styled, alpha } from "@mui/material/styles";
 import { Toolbar, IconButton, Divider, List } from "@mui/material";
 import MuiDrawer from "@mui/material/Drawer";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems, secondaryListItems } from "./listitemsAdmin";
+
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import AssignmentIcon from "@mui/icons-material/Assignment";
+
+import useLogout from "../../hooks/useLogout";
+
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -31,10 +40,19 @@ const Drawer = styled(MuiDrawer, {
                 width: theme.spacing(9),
             },
         }),
+        backgroundColor: alpha(theme.palette.grey[600], 0.48),
     },
 }));
 
 function Sidebar({ open, toggleDrawer }) {
+    const logout = useLogout();
+    const navigate = useNavigate();
+
+    const signOut = async () => {
+        await logout();
+        navigate("/login");
+    };
+
     return (
         <Drawer variant="permanent" open={open}>
             <Toolbar
@@ -43,6 +61,8 @@ function Sidebar({ open, toggleDrawer }) {
                     alignItems: "center",
                     justifyContent: "flex-end",
                     px: [1],
+                    backgroundColor: (theme) =>
+                        alpha(theme.palette.grey[600], 0.48),
                 }}
             >
                 <IconButton onClick={toggleDrawer}>
@@ -54,6 +74,13 @@ function Sidebar({ open, toggleDrawer }) {
                 {mainListItems}
                 <Divider sx={{ my: 1 }} />
                 {secondaryListItems}
+                <Divider sx={{ my: 1 }} />
+                <ListItemButton onClick={signOut}>
+                    <ListItemIcon>
+                        <AssignmentIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Logout" />
+                </ListItemButton>
             </List>
         </Drawer>
     );

@@ -66,13 +66,13 @@ export default function LoginPage() {
                             <TypeAnimation
                                 sequence={[
                                     // Same substring at the start will only be typed out once, initially
-                                    "Create contracts on the blockchain",
+                                    "Find new volunteering roles",
                                     1000, // wait 1s before replacing "Mice" with "Hamsters"
-                                    "Create contracts safely",
+                                    "Track upcoming volunteering activities",
                                     1000,
-                                    "Create contracts securely",
+                                    "Submit Feedback for activities",
                                     1000,
-                                    "Create contracts in seconds",
+                                    "Request for volunteering certificate",
                                     1000,
                                 ]}
                                 wrapper="span"

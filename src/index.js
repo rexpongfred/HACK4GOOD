@@ -5,17 +5,20 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ThemeProvider from "./theme";
+import { AuthProvider } from "./context/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <HelmetProvider>
             <BrowserRouter>
-                <ThemeProvider>
-                    <Routes>
-                        <Route path="/*" element={<App />} />
-                    </Routes>
-                </ThemeProvider>
+                <AuthProvider>
+                    <ThemeProvider>
+                        <Routes>
+                            <Route path="/*" element={<App />} />
+                        </Routes>
+                    </ThemeProvider>
+                </AuthProvider>
             </BrowserRouter>
         </HelmetProvider>
     </React.StrictMode>

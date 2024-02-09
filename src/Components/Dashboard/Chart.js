@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import { LineChart, axisClasses } from "@mui/x-charts";
 
 import Title from "./Title";
+import { Box } from "@mui/material";
 
 // Generate Sales Data
 function createData(time, amount) {
@@ -27,7 +28,7 @@ export default function Chart() {
     return (
         <React.Fragment>
             <Title>Today</Title>
-            <div style={{ width: "100%", flexGrow: 1, overflow: "hidden" }}>
+            <Box style={{ width: "100%", flexGrow: 1, overflow: "hidden" }}>
                 <LineChart
                     dataset={data}
                     margin={{
@@ -75,7 +76,7 @@ export default function Chart() {
                         },
                     }}
                 />
-            </div>
+            </Box>
         </React.Fragment>
     );
 }

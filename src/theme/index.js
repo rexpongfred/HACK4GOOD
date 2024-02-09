@@ -8,12 +8,12 @@ import {
     StyledEngineProvider,
 } from "@mui/material/styles";
 //
-// import palette from "./palette";
+import palette from "./palette";
 // import shadows from "./shadows";
-// import typography from "./typography";
+import typography from "./typography";
 import GlobalStyles from "./globalStyles";
 // import customShadows from "./customShadows";
-// import componentsOverride from "./overrides";
+import componentsOverride from "./overrides";
 
 // ----------------------------------------------------------------------
 
@@ -24,9 +24,9 @@ ThemeProvider.propTypes = {
 export default function ThemeProvider({ children }) {
     const themeOptions = useMemo(
         () => ({
-            // palette,
+            palette,
             shape: { borderRadius: 6 },
-            // typography,
+            typography,
             // shadows: shadows(),
             // customShadows: customShadows(),
         }),
@@ -34,7 +34,7 @@ export default function ThemeProvider({ children }) {
     );
 
     const theme = createTheme(themeOptions);
-    // theme.components = componentsOverride(theme);
+    theme.components = componentsOverride(theme);
 
     return (
         <StyledEngineProvider injectFirst>
