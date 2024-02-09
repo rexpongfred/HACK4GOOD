@@ -8,6 +8,8 @@ import VolunteerDashboard from "./Components/Dashboard/DashboardVolunteer";
 import AdminDashboard from "./Components/Dashboard/DashboardAdmin";
 import EnrolledActivities from "./Pages/Enrolled Activities";
 import Opportunities from "./Pages/Opportunities";
+import MyCertificate from "./Pages/MyCertificate";
+import CreateForm from "./Pages/CreateForm";
 import DashboardLayout from "./Layouts/DashboardLayout";
 import RequireAuth from "./Components/RequireAuth";
 import PersistLogin from "./Components/PersistLogin";
@@ -34,6 +36,8 @@ function App() {
                         element={<EnrolledActivities />}
                     />
                     <Route path="/Opportunities" element={<Opportunities />} />
+                    <Route path="MyCertificate" element={<MyCertificate />} />
+                    <Route path="createForm" element={<CreateForm />} />
                 </Route>
             </Route>
         </Routes>

@@ -9,22 +9,23 @@ import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import LayersIcon from "@mui/icons-material/Layers";
 import AssignmentIcon from "@mui/icons-material/Assignment";
+import { Link } from "react-router-dom";
 
 export const mainListItems = (
     <React.Fragment>
-        <ListItemButton>
+        <ListItemButton component={Link} to="admin">
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
             <ListItemText primary="My Summary" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} to="createform">
             <ListItemIcon>
                 <ShoppingCartIcon />
             </ListItemIcon>
             <ListItemText primary="Create Form" />
         </ListItemButton>
-        <ListItemButton>
+        <ListItemButton component={Link} to="enrolled-activities">
             <ListItemIcon>
                 <PeopleIcon />
             </ListItemIcon>
@@ -50,7 +51,7 @@ export const secondaryListItems = (
         {/* <ListSubheader component="div" inset>
             Saved reports
         </ListSubheader> */}
-        <ListItemButton>
+        <ListItemButton component={Link} to="mycertificate">
             <ListItemIcon>
                 <AssignmentIcon />
             </ListItemIcon>
