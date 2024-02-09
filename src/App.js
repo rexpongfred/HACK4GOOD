@@ -7,7 +7,7 @@ import AdminDashboard from "./Components/Dashboard/DashboardAdmin";
 import EnrolledActivities from "./Pages/Enrolled Activities";
 import Opportunities from "./Pages/Opportunities";
 import DashboardLayout from "./Layouts/DashboardLayout";
-import MyCertificates from "./Pages/MyCertificates";
+import MyCertificate from "./Pages/MyCertificate";
 
 function App() {
     return (
@@ -28,7 +28,7 @@ function App() {
                     element={<EnrolledActivities />}
                 ></Route>
                 <Route path="/Opportunities" element={<Opportunities />} />
-                <Route path="MyCertificates" element={<MyCertificates />} />
+                <Route path="MyCertificate" element={<MyCertificate />} />
             </Route>
         </Routes>
     );

@@ -14,7 +14,7 @@ const threads = [
 ];
 
 
-function MyCertificates() {
+function MyCertificate() {
 
 
     const handleDownload = (thread) => {
@@ -51,4 +51,4 @@ function MyCertificates() {
     )
 }
 
-export default MyCertificates
+export default MyCertificate
