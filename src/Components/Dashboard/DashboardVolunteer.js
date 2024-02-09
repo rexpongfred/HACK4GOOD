@@ -36,10 +36,7 @@ export default function Dashboard() {
             <Box
                 component="main"
                 sx={{
-                    backgroundColor: (theme) =>
-                        theme.palette.mode === "light"
-                            ? theme.palette.grey[100]
-                            : theme.palette.grey[900],
+                    backgroundColor: (theme) => theme.palette.grey[900],
                     flexGrow: 1,
                     height: "100vh",
                     overflow: "auto",
@@ -56,6 +53,8 @@ export default function Dashboard() {
                                     display: "flex",
                                     flexDirection: "column",
                                     height: 240,
+                                    backgroundColor: (theme) =>
+                                        theme.palette.grey[800],
                                 }}
                             >
                                 <Chart />
@@ -69,6 +68,8 @@ export default function Dashboard() {
                                     display: "flex",
                                     flexDirection: "column",
                                     height: 240,
+                                    backgroundColor: (theme) =>
+                                        theme.palette.grey[800],
                                 }}
                             >
                                 <Deposits />
@@ -81,6 +82,8 @@ export default function Dashboard() {
                                     p: 2,
                                     display: "flex",
                                     flexDirection: "column",
+                                    backgroundColor: (theme) =>
+                                        theme.palette.grey[800],
                                 }}
                             >
                                 <Orders />

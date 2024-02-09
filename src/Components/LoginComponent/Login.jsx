@@ -1,10 +1,11 @@
-//import "./login.css";
+// import "./login.css";
 import React from "react";
-// import { useRef, useState, useEffect } from "react";
-// import useAuth from "../../hooks/useAuth";
-// import { NavLink, useNavigate, useLocation } from "react-router-dom";
-// import useInput from "../../hooks/useInput";
+import { useRef, useState, useEffect } from "react";
+import useAuth from "../../hooks/useAuth";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import useInput from "../../hooks/useInput";
 // import useToggle from "../../hooks/useToggle";
+import Alert from "@mui/material/Alert";
 
 //mui
 import {
@@ -16,64 +17,64 @@ import {
     Link,
 } from "@mui/material";
 
-// import axios from "../../api/axios";
-// const LOGIN_URL = "/auth";
+import axios from "../../api/axios";
+const LOGIN_URL = "/auth";
 
 const Login = () => {
-    // const { setAuth } = useAuth();
+    const { setAuth } = useAuth();
 
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
-    // const userRef = useRef();
-    // const errRef = useRef();
+    const userRef = useRef();
+    const errRef = useRef();
 
-    // const [user, resetUser, userAttribs] = useInput("user", ""); //useState("");
-    // const [pwd, setPwd] = useState("");
-    // const [errMsg, setErrMsg] = useState("");
+    const [user, resetUser, userAttribs] = useInput("user", ""); //useState("");
+    const [pwd, setPwd] = useState("");
+    const [errMsg, setErrMsg] = useState("");
     // const [check, toggleCheck] = useToggle("persist", false);
 
-    // useEffect(() => {
-    //     userRef.current.focus();
-    // }, []);
+    useEffect(() => {
+        userRef.current.focus();
+    }, []);
 
-    // useEffect(() => {
-    //     setErrMsg("");
-    // }, [user, pwd]);
+    useEffect(() => {
+        setErrMsg("");
+    }, [user, pwd]);
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    //     try {
-    //         const response = await axios.post(
-    //             LOGIN_URL,
-    //             JSON.stringify({ user, pwd }),
-    //             {
-    //                 headers: { "Content-Type": "application/json" },
-    //                 withCredentials: true,
-    //             }
-    //         );
-    //         console.log(JSON.stringify(response?.data));
-    //         const accessToken = response?.data?.accessToken;
-    //         setAuth({ user, accessToken });
-    //         //setUser("");
-    //         resetUser();
-    //         setPwd("");
-    //         // setSuccess(true);
-    //         navigate(from, { replace: true });
-    //     } catch (err) {
-    //         console.log(err);
-    //         if (!err?.response) {
-    //             setErrMsg("No Server Response");
-    //         } else if (err.response?.status === 400) {
-    //             setErrMsg("Missing Username or Password");
-    //         } else {
-    //             setErrMsg("Login Failed");
-    //         }
-    //         errRef.current.focus();
-    //     }
-    // };
+        try {
+            const response = await axios.post(
+                LOGIN_URL,
+                JSON.stringify({ user, pwd }),
+                {
+                    headers: { "Content-Type": "application/json" },
+                    withCredentials: true,
+                }
+            );
+            console.log(JSON.stringify(response?.data));
+            const accessToken = response?.data?.accessToken;
+            setAuth({ user, accessToken });
+            // setUser("");
+            resetUser();
+            setPwd("");
+            // setSuccess(true);
+            navigate(from, { replace: true });
+        } catch (err) {
+            console.log(err);
+            if (!err?.response) {
+                setErrMsg("No Server Response");
+            } else if (err.response?.status === 400) {
+                setErrMsg("Missing Username or Password");
+            } else {
+                setErrMsg("Login Failed");
+            }
+            errRef.current.focus();
+        }
+    };
 
     // const togglePersist = () => {
     //     setPersist((prev) => !prev);
@@ -86,33 +87,34 @@ const Login = () => {
     return (
         <div className="loginpage-container">
             <section className="login--container">
-                {/* <p
+                <Alert
+                    severity="error"
+                    aria-live="assertive"
                     ref={errRef}
                     className={errMsg ? "errmsg" : "offscreen"}
-                    aria-live="assertive"
                 >
                     {errMsg}
-                </p> */}
+                </Alert>
                 <Typography variant="h3" sx={{ px: 5, mb: 5 }}>
-                    Sign in to SINEP
+                    Sign in to portal
                 </Typography>
                 <Stack spacing={3}>
                     <TextField
                         variant="outlined"
                         type="text"
                         id="username"
-                        // ref={userRef}
+                        ref={userRef}
                         name="username"
                         label="Username"
                         autoComplete="off"
-                        // {...userAttribs}
+                        {...userAttribs}
                         required
                     />
                     <TextField
                         type="password"
                         id="password"
-                        // onChange={(e) => setPwd(e.target.value)}
-                        // value={pwd}
+                        onChange={(e) => setPwd(e.target.value)}
+                        value={pwd}
                         required
                         name="password"
                         label="Password"
@@ -132,7 +134,7 @@ const Login = () => {
                     size="large"
                     type="submit"
                     variant="contained"
-                    // onClick={handleSubmit}
+                    onClick={handleSubmit}
                 >
                     Sign In
                 </Button>
@@ -140,7 +142,7 @@ const Login = () => {
                     Need an Account?
                     <br />
                     <Link
-                        // component={NavLink}
+                        component={NavLink}
                         to="/register"
                         variant="subtitle2"
                         underline="hover"
