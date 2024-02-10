@@ -1,12 +1,21 @@
-import { Box, Button, Card, Container, Typography, Grid, CardContent, TextField } from '@mui/material'
-import { useState, React } from 'react';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import {
+    Box,
+    Button,
+    Card,
+    Container,
+    Typography,
+    Grid,
+    CardContent,
+    TextField,
+} from "@mui/material";
+import { useState, React } from "react";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const cardData = [
     {
@@ -20,16 +29,16 @@ const cardData = [
     {
         title: "Card 3",
         description: "Lorem ipsum dolor sit amet...",
-    }
+    },
 ];
 
 function CreateForm() {
     const [open, setOpen] = useState(false);
     const [activityData, setActivityData] = useState({
-        name: '',
-        dateTime: '',
-        description: '',
-        location: ''
+        name: "",
+        dateTime: "",
+        description: "",
+        location: "",
     });
 
     const handleOpen = () => {
@@ -47,28 +56,36 @@ function CreateForm() {
 
     const handleSubmit = () => {
         // Handle form submission here
-        console.log('Activity data:', activityData);
+        console.log("Activity data:", activityData);
         handleClose();
     };
 
     return (
-        <Container maxWidth="m" >
-            <Typography variant="h4" margin={2}  >
+        <Container maxWidth="m">
+            <Typography variant="h4" margin={2}>
                 Live form postings (Use bottom right button to add activities)
             </Typography>
             <Grid container spacing={4}>
                 {cardData.map((data, index) => (
                     <Grid item xs={6} key={index}>
-                        <Card>
+                        <Card
+                            sx={{
+                                backgroundColor: (theme) =>
+                                    theme.palette.grey[800],
+                            }}
+                        >
                             <CardContent>
                                 <Typography variant="h5" component="h2">
                                     {data.title}
                                 </Typography>
-                                <Typography variant="body2" color="textSecondary">
+                                <Typography
+                                    variant="body2"
+                                    color="textSecondary"
+                                >
                                     {data.description}
                                 </Typography>
                                 <Box mt={2}>
-                                    <Button variant="contained" color="primary"  >
+                                    <Button variant="contained" color="primary">
                                         View more details
                                     </Button>
                                 </Box>
@@ -81,16 +98,27 @@ function CreateForm() {
                         </Card>
                     </Grid>
                 ))}
-                <Grid item xs={4}>
-                </Grid>
+                <Grid item xs={4}></Grid>
             </Grid>
 
-
-            <div>
-                <Fab color="primary" aria-label="add" onClick={handleOpen} style={{ position: 'fixed', bottom: '20px', right: '20px' }}>
+            <div sx>
+                <Fab
+                    color="primary"
+                    aria-label="add"
+                    onClick={handleOpen}
+                    style={{ position: "fixed", bottom: "20px", right: "20px" }}
+                >
                     <AddIcon />
                 </Fab>
-                <Dialog open={open} onClose={handleClose}>
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    PaperProps={{
+                        style: {
+                            backgroundColor: "#212B36",
+                        },
+                    }}
+                >
                     <DialogTitle>Add new activity</DialogTitle>
                     <DialogContent>
                         <DialogContentText>
@@ -149,8 +177,7 @@ function CreateForm() {
                 </Dialog>
             </div>
         </Container>
-
-    )
+    );
 }
 
-export default CreateForm
+export default CreateForm;

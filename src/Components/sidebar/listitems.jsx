@@ -11,9 +11,9 @@ import LayersIcon from "@mui/icons-material/Layers";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import { Link } from "react-router-dom";
 
-export const mainListItems = (
+const mainListItemsVolunteer = (
     <React.Fragment>
-        <ListItemButton component={Link} to="admin">
+        <ListItemButton component={Link} to="/">
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
@@ -31,43 +31,67 @@ export const mainListItems = (
             </ListItemIcon>
             <ListItemText primary="Enrolled Activities" />
         </ListItemButton>
-        {/* <ListItemButton>
-            <ListItemIcon>
-                <BarChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Reports" />
-        </ListItemButton> */}
-        {/* <ListItemButton>
-            <ListItemIcon>
-                <LayersIcon />
-            </ListItemIcon>
-            <ListItemText primary="Integrations" />
-        </ListItemButton> */}
     </React.Fragment>
 );
 
-export const secondaryListItems = (
+const secondaryListItemsVolunteer = (
     <React.Fragment>
-        {/* <ListSubheader component="div" inset>
-            Saved reports
-        </ListSubheader> */}
         <ListItemButton component={Link} to="mycertificate">
             <ListItemIcon>
                 <AssignmentIcon />
             </ListItemIcon>
             <ListItemText primary="My Certificate" />
         </ListItemButton>
-        {/* <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Last quarter" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Year-end sale" />
-        </ListItemButton> */}
     </React.Fragment>
 );
+
+const mainListItemsAdmin = (
+    <React.Fragment>
+        <ListItemButton component={Link} to="/">
+            <ListItemIcon>
+                <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText primary="My Summary" />
+        </ListItemButton>
+        <ListItemButton component={Link} to="/">
+            <ListItemIcon>
+                <ShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText primary="Create new Activity" />
+        </ListItemButton>
+        <ListItemButton component={Link} to="/">
+            <ListItemIcon>
+                <PeopleIcon />
+            </ListItemIcon>
+            <ListItemText primary="Generate Report" />
+        </ListItemButton>
+    </React.Fragment>
+);
+
+const secondaryListItemsAdmin = (
+    <React.Fragment>
+        <ListItemButton component={Link} to="mycertificate">
+            <ListItemIcon>
+                <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Approve volunteers" />
+        </ListItemButton>
+        <ListItemButton component={Link} to="/">
+            <ListItemIcon>
+                <AssignmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Take attendance" />
+        </ListItemButton>
+    </React.Fragment>
+);
+
+export const ListItems = {
+    volunteer: {
+        main: mainListItemsVolunteer,
+        secondary: secondaryListItemsVolunteer,
+    },
+    admin: {
+        main: mainListItemsAdmin,
+        secondary: secondaryListItemsAdmin,
+    },
+};

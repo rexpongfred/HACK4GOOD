@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MenuIcon from "@mui/icons-material/Menu";
+import useAuth from "../../hooks/useAuth";
+import { jwtDecode as jwt_decode } from "jwt-decode";
 
 const drawerWidth = 240;
 
@@ -31,6 +33,14 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 function Header({ open, toggleDrawer }) {
+    const { auth } = useAuth();
+
+    const decoded = auth?.accessToken
+        ? jwt_decode(auth.accessToken)
+        : undefined;
+
+    const username = decoded?.UserInfo?.username || "";
+
     return (
         <AppBar position="absolute" open={open}>
             <Toolbar
@@ -57,7 +67,7 @@ function Header({ open, toggleDrawer }) {
                     noWrap
                     sx={{ flexGrow: 1 }}
                 >
-                    Admin
+                    {username}
                 </Typography>
                 <IconButton color="inherit">
                     <Badge badgeContent={4} color="secondary">
