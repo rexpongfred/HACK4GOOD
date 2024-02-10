@@ -10,12 +10,12 @@ This repo was built using the MERN framework, Mongo, Express.js, React.js and No
 * Project prototype link
 
 ## Table of contents
-* [Functions and features] (#functions-and-features)
-* [Technologies] (#technologies)
+* [Functions and features](#functions-and-features)
+* [Technologies](#technologies)
 <!-- * [Structure of files] (#structure-of-files) -->
-* [Setup instructions] (#Setup-instructions)## Table of contents
+* [Setup instructions](#Setup-instructions)## Table of contents
 
-## Function and features 
+## Functions and features 
 As of submission date, the available features are mostly frontend features. Certain proposed features that have yet to be added are marked with "Work in progress" below, and will be added when requested to.
 * Authentication function. Users can log in and log out of the web page as either Admin or Volunteer.
 * For Volunteer: 
