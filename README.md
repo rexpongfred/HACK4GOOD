@@ -13,7 +13,7 @@ This repo was built using the MERN framework, Mongo, Express.js, React.js and No
 * [Functions and features](#functions-and-features)
 * [Technologies](#technologies)
 <!-- * [Structure of files] (#structure-of-files) -->
-* [Setup instructions](#Setup-instructions)## Table of contents
+* [Setup instructions](#Setup-instructions)
 
 ## Functions and features 
 As of submission date, the available features are mostly frontend features. Certain proposed features that have yet to be added are marked with "Work in progress" below, and will be added when requested to.
