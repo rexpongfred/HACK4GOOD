@@ -47,7 +47,7 @@ const EnrolledActivities = () => {
             <Grid container spacing={2}>
                 {enrolledActivities.map((activity) => (
                     <Grid item key={activity.id} xs={12} sm={6} md={4} lg={3}>
-                        <Card style={{ backgroundColor: "transparent" }}>
+                        <Card style={{ backgroundColor: "#666" }}>
                             <CardContent>
                                 <Typography variant="h5" component="h2">
                                     {activity.title}

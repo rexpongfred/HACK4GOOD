@@ -60,17 +60,23 @@ function App() {
                             element={<MyCertificate />}
                         />
                     </Route>
-                    <Route
+                    {/* <Route
                         element={<RequireAuth allowedRoles={["volunteer"]} />}
                     >
                         <Route path="/createForm" element={<CreateForm />} />
-                    </Route>
+                    </Route> */}
 
                     {/* Admin Routes */}          
                     <Route
                         element={<RequireAuth allowedRoles={["admin"]} />}
                     >
                         <Route path="/takeattendance" element={<TakeAttendance />} />
+                    </Route>
+
+                    <Route
+                        element={<RequireAuth allowedRoles={["admin"]} />}
+                    >
+                        <Route path="/createForm" element={<CreateForm />} />
                     </Route>
                 </Route>
             </Route>
