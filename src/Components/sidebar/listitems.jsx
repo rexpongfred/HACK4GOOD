@@ -76,7 +76,7 @@ const secondaryListItemsAdmin = (
             </ListItemIcon>
             <ListItemText primary="Approve volunteers" />
         </ListItemButton>
-        <ListItemButton component={Link} to="/">
+        <ListItemButton component={Link} to="/takeattendance">
             <ListItemIcon>
                 <AssignmentIcon />
             </ListItemIcon>

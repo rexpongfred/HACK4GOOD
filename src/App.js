@@ -12,6 +12,7 @@ import DashboardLayout from "./Layouts/DashboardLayout";
 import RequireAuth from "./Components/RequireAuth";
 import PersistLogin from "./Components/PersistLogin";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import TakeAttendance from "./Pages/TakeAttendance";
 
 function App() {
     return (
@@ -65,7 +66,12 @@ function App() {
                         <Route path="/createForm" element={<CreateForm />} />
                     </Route>
 
-                    {/* Admin Routes */}
+                    {/* Admin Routes */}          
+                    <Route
+                        element={<RequireAuth allowedRoles={["admin"]} />}
+                    >
+                        <Route path="/takeattendance" element={<TakeAttendance />} />
+                    </Route>
                 </Route>
             </Route>
         </Routes>
