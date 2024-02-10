@@ -23,7 +23,7 @@ const mainListItemsVolunteer = (
             <ListItemIcon>
                 <ShoppingCartIcon />
             </ListItemIcon>
-            <ListItemText primary="Create Form" />
+            <ListItemText primary="View Activities" />
         </ListItemButton>
         <ListItemButton component={Link} to="enrolled-activities">
             <ListItemIcon>
