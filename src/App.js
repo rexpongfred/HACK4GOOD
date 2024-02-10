@@ -36,8 +36,8 @@ function App() {
                         element={<EnrolledActivities />}
                     />
                     <Route path="/Opportunities" element={<Opportunities />} />
-                    <Route path="MyCertificate" element={<MyCertificate />} />
-                    <Route path="createForm" element={<CreateForm />} />
+                    <Route path="/MyCertificate" element={<MyCertificate />} />
+                    <Route path="/createForm" element={<CreateForm />} />
                 </Route>
             </Route>
         </Routes>
