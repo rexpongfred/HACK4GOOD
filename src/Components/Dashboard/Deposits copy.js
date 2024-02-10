@@ -22,7 +22,7 @@ export default function Deposits() {
 
   return (
     <React.Fragment>
-      <Title style={{ fontSize: '60px', textAlign: 'center' }}>Total Hours</Title>
+      <Title style={{ fontSize: '60px', textAlign: 'center' }}>My Hours</Title>
       <Typography component="p" variant="h4" align="center" style={{ fontSize: '48px' }}>
         {totalHours + "h"}
       </Typography>

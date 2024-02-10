@@ -19,7 +19,7 @@ const mainListItemsVolunteer = (
             </ListItemIcon>
             <ListItemText primary="My Summary" />
         </ListItemButton>
-        <ListItemButton component={Link} to="">
+        <ListItemButton component={Link} to="/viewactivities">
             <ListItemIcon>
                 <ShoppingCartIcon />
             </ListItemIcon>

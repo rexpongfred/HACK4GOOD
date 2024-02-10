@@ -13,6 +13,7 @@ import RequireAuth from "./Components/RequireAuth";
 import PersistLogin from "./Components/PersistLogin";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import TakeAttendance from "./Pages/TakeAttendance";
+import ViewActivities from "./Pages/ViewActivities";
 import ApproveVolunteers from "./Pages/ApproveVolunteers";
 
 function App() {
@@ -61,28 +62,28 @@ function App() {
                             element={<MyCertificate />}
                         />
                     </Route>
-                    {/* <Route
+                    <Route
                         element={<RequireAuth allowedRoles={["volunteer"]} />}
                     >
-                        <Route path="/createForm" element={<CreateForm />} />
-                    </Route> */}
+                        <Route
+                            path="/viewactivities"
+                            element={<ViewActivities />}
+                        />
+                    </Route>
 
                     {/* Admin Routes */}
-                    <Route
-                        element={<RequireAuth allowedRoles={["admin"]} />}
-                    >
-                        <Route path="/takeattendance" element={<TakeAttendance />} />
+                    <Route element={<RequireAuth allowedRoles={["admin"]} />}>
+                        <Route
+                            path="/takeattendance"
+                            element={<TakeAttendance />}
+                        />
                     </Route>
 
-                    <Route
-                        element={<RequireAuth allowedRoles={["admin"]} />}
-                    >
+                    <Route element={<RequireAuth allowedRoles={["admin"]} />}>
                         <Route path="/createForm" element={<CreateForm />} />
                     </Route>
 
-                    <Route
-                        element={<RequireAuth allowedRoles={["admin"]} />}
-                    >
+                    <Route element={<RequireAuth allowedRoles={["admin"]} />}>
                         <Route
                             path="/approve"
                             element={<ApproveVolunteers />}
