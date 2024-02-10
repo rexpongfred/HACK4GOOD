@@ -70,7 +70,7 @@ const mainListItemsAdmin = (
 
 const secondaryListItemsAdmin = (
     <React.Fragment>
-        <ListItemButton component={Link} to="mycertificate">
+        <ListItemButton component={Link} to="/approve">
             <ListItemIcon>
                 <AssignmentIcon />
             </ListItemIcon>

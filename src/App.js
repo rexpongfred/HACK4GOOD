@@ -13,6 +13,7 @@ import RequireAuth from "./Components/RequireAuth";
 import PersistLogin from "./Components/PersistLogin";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import TakeAttendance from "./Pages/TakeAttendance";
+import ApproveVolunteers from "./Pages/ApproveVolunteers";
 
 function App() {
     return (
@@ -66,7 +67,7 @@ function App() {
                         <Route path="/createForm" element={<CreateForm />} />
                     </Route> */}
 
-                    {/* Admin Routes */}          
+                    {/* Admin Routes */}
                     <Route
                         element={<RequireAuth allowedRoles={["admin"]} />}
                     >
@@ -77,6 +78,15 @@ function App() {
                         element={<RequireAuth allowedRoles={["admin"]} />}
                     >
                         <Route path="/createForm" element={<CreateForm />} />
+                    </Route>
+
+                    <Route
+                        element={<RequireAuth allowedRoles={["admin"]} />}
+                    >
+                        <Route
+                            path="/approve"
+                            element={<ApproveVolunteers />}
+                        />
                     </Route>
                 </Route>
             </Route>
