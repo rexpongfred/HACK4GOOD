@@ -82,7 +82,7 @@ function Sidebar({ open, toggleDrawer }) {
 
         setRole(decoded?.UserInfo?.role || "volunteer");
         setUsername(decoded?.UserInfo?.username || "");
-    }, []);
+    }, [auth.accessToken]);
 
     const signOut = async () => {
         await logout();

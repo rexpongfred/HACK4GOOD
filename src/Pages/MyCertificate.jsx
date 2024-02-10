@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
 import Container from "@mui/material/Container";
 import { Typography } from "@mui/material";
@@ -40,7 +40,7 @@ function MyCertificate() {
                 My completed activities
             </Typography>
 
-            <Grid container direction={"column"} container spacing={2}>
+            <Grid container direction={"column"} spacing={2}>
                 {threads.map((thread) => (
                     <Grid item key={thread.id} xs={12} sm={6} md={4} lg={3}>
                         <Card

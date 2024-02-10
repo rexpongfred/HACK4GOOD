@@ -23,7 +23,7 @@ function Dashboard() {
             : undefined;
 
         setRole(decoded?.UserInfo?.role || "volunteer");
-    }, []);
+    }, [auth.accessToken]);
     return role ? DashboardBasedOnRole[role] : "";
 }
 
