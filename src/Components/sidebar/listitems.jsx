@@ -19,7 +19,7 @@ const mainListItemsVolunteer = (
             </ListItemIcon>
             <ListItemText primary="My Summary" />
         </ListItemButton>
-        <ListItemButton component={Link} to="createform">
+        <ListItemButton component={Link} to="">
             <ListItemIcon>
                 <ShoppingCartIcon />
             </ListItemIcon>
@@ -53,13 +53,13 @@ const mainListItemsAdmin = (
             </ListItemIcon>
             <ListItemText primary="My Summary" />
         </ListItemButton>
-        <ListItemButton component={Link} to="/">
+        <ListItemButton component={Link} to="/createForm">
             <ListItemIcon>
                 <ShoppingCartIcon />
             </ListItemIcon>
             <ListItemText primary="Create new Activity" />
         </ListItemButton>
-        <ListItemButton component={Link} to="/">
+        <ListItemButton component={Link} to="">
             <ListItemIcon>
                 <PeopleIcon />
             </ListItemIcon>
