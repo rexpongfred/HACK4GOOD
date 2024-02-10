@@ -7,17 +7,18 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
-// Generate Hours Volunteered Data
-function createData(date, volunteerName, hoursVolunteered) {
-  return { date, volunteerName, hoursVolunteered };
+// Generate fake data rows for volunteers
+function createData(date, activityName, hoursVolunteered) {
+  return { date, activityName, hoursVolunteered };
 }
 
-const rows = [
-  createData('2022-01-01', 'John Doe', 5),
-  createData('2022-01-02', 'Jane Doe', 4),
-  createData('2022-01-03', 'Alice Smith', 6),
-  createData('2022-01-04', 'Bob Johnson', 3),
-  createData('2022-01-05', 'Emily Brown', 5),
+// Fake data for volunteers
+const rawData = [
+  { date: "2022-01-01", activityName: "Hack 4 Good", hours: 5 },
+  { date: "2022-01-02", activityName: "Yellow Ribbon Run", hours: 4 },
+  { date: "2022-01-03", activityName: "Down Syndrome Assiciation Singapore", hours: 6 },
+  { date: "2022-01-04", activityName: "Run for Good", hours: 3 },
+  { date: "2022-01-05", activityName: "Soup Kitchen Superstars", hours: 5 },
 ];
 
 function preventDefault(event) {
@@ -27,21 +28,21 @@ function preventDefault(event) {
 export default function HoursVolunteered() {
   return (
     <React.Fragment>
-      <Title>Hours Volunteered</Title>
+      <Title>My Activity</Title>
       <Table size="small">
         <TableHead>
           <TableRow>
             <TableCell>Date</TableCell>
-            <TableCell>Volunteer Name</TableCell>
+            <TableCell>Activity Name</TableCell>
             <TableCell align="right">Hours Volunteered</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {rawData.map((row) => (
             <TableRow key={row.date}>
               <TableCell>{row.date}</TableCell>
-              <TableCell>{row.volunteerName}</TableCell>
-              <TableCell align="right">{row.hoursVolunteered}</TableCell>
+              <TableCell>{row.activityName}</TableCell>
+              <TableCell align="right">{row.hours}</TableCell>
             </TableRow>
           ))}
         </TableBody>

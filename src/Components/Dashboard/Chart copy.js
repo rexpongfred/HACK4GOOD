@@ -7,11 +7,11 @@ import { Box } from "@mui/material";
 
 // Sample data
 const rawData = [
-  { date: "2022-01-01", name: "John Doe", hours: 5 },
-  { date: "2022-01-02", name: "Jane Doe", hours: 4 },
-  { date: "2022-01-03", name: "Alice Smith", hours: 6 },
-  { date: "2022-01-04", name: "Bob Johnson", hours: 3 },
-  { date: "2022-01-05", name: "Emily Brown", hours: 5 }, // Placeholder for the current day
+  { date: "2022-01-01", hours: 5 },
+  { date: "2022-01-02", hours: 4 },
+  { date: "2022-01-03", hours: 6 },
+  { date: "2022-01-04", hours: 3 },
+  { date: "2022-01-05", hours: 5 },
 ];
 
 // Function to calculate cumulative hours volunteered
@@ -31,7 +31,7 @@ export default function Chart() {
 
   return (
     <React.Fragment>
-      <Title>Cumulative Hours Volunteered</Title>
+      <Title>My Hours Volunteered</Title>
       <Box style={{ width: "100%", flexGrow: 1, overflow: "hidden" }}>
         <LineChart
           dataset={chartData}
@@ -83,6 +83,18 @@ export default function Chart() {
             },
             "& .recharts-tooltip-wrapper .recharts-tooltip-label": {
               color: theme.palette.common.white, // Text color of tooltip label
+            },
+            "& .recharts-line-dots": {
+              "& .recharts-dot": {
+                fill: theme.palette.common.white, // Color of data points
+                stroke: theme.palette.primary.light, // Border color of data points
+                strokeWidth: 2, // Border width of data points
+              },
+              "& .recharts-dot-hover": {
+                fill: theme.palette.primary.light, // Color of data points on hover
+                stroke: theme.palette.primary.dark, // Border color of data points on hover
+                strokeWidth: 2, // Border width of data points on hover
+              },
             },
           }}
         />
