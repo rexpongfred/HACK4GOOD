@@ -1,4 +1,54 @@
-# Getting Started with Create React App
+# Solution for HACK4GOOD Problem statement 1 for Big at Heart
+Repo was done by Frederick Yeo, Shawn Pong and Rex Yong.
+
+## Description
+This repo was built using the MERN framework, Mongo, Express.js, React.js and Node.js
+
+## Other Links
+* Project pitch deck
+* Project Demo video
+* Project prototype link
+
+## Table of contents
+* [Functions and features] (#functions-and-features)
+* [Technologies] (#technologies)
+<!-- * [Structure of files] (#structure-of-files) -->
+* [Setup instructions] (#Setup-instructions)## Table of contents
+
+## Function and features 
+As of submission date, the available features are mostly frontend features. Certain proposed features that have yet to be added are marked with "Work in progress" below, and will be added when requested to.
+* Authentication function. Users can log in and log out of the web page as either Admin or Volunteer.
+* For Volunteer: 
+    * My summary page to see total hours
+    * Enrolled activities page
+    * My certificate page to request for certificates
+    * Logout button to logout
+* For Admins: 
+    * My summary page to see total hours
+    * Create new activity page (Wrongly routed for now)
+    * Logout button 
+    * Generate report page (Work in progress)
+    * Approve volunteer page (Work in progress)
+    * Take attendance page (Work in progress)
+
+## Technologies
+Project is created with:
+* React.js
+* Mongo DB
+* Express.js
+* React Material UI
+* Node.js
+* Render (Hosting)
+
+## Setup Instructions
+* Clone and download the repository from github
+* Ensure that you have downloaded the necessary technologies listed above. 
+* Navigate to ...\repo-backend, type in "npm start" in the terminal to install the required packages and dependencies.
+    * Under same directory, type in "npm start dev" to start the back end.
+* Navigate to ...\repo , type in "npm start" in the terminal to install the required packages and dependencies. 
+    * Under same directory, type in "npm start" to start the front end.
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +117,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
