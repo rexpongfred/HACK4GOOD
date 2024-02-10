@@ -29,7 +29,7 @@ function Copyright(props) {
     );
 }
 
-export default function Dashboard() {
+export default function DashboardVolunteer() {
     return (
         <Box sx={{ display: "flex" }}>
             <CssBaseline />
